@@ -3,8 +3,9 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
-class Complains extends Model
+class Names extends Model
 {
     //
     protected $table="Names";
@@ -14,4 +15,9 @@ class Complains extends Model
         'LastName',
         'Suffix'
     ];
+
+    public function fetch_names(){
+        $names = DB::table('Names')->get();
+        return $names;
+    }
 }
