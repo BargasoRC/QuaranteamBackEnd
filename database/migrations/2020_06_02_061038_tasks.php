@@ -17,6 +17,7 @@ class Tasks extends Migration
             $table->bigIncrements('id')->nullable(false);
             $table->string('sTasks')->nullable(false);
             $table->integer('NoOfStudents')->nullable(false);
+            $table->string('Center')->nullable(false);
             $table->string('Difficulty')->nullable(false);
             $table->timestamps();
         });

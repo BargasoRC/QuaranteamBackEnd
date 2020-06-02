@@ -12,6 +12,7 @@ class Tasks extends Controller
         $validation = $request->validate([
             'sTasks'=>'required',
             'NoOfStudents'=>'required',
+            'Center'=>'required',
             'Difficulty'=>'required'
         ]);
         if($validation->fails()){
