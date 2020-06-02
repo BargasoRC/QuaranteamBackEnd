@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/retrieve_bus','Name@retrieveNames');
+
+Route::post('Admin/AddTasks','Tasks@AddTasks');

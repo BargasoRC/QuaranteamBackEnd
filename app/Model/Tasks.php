@@ -3,8 +3,10 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use DB;
 
-class Tasks extends Model
+class Task extends Model
 {
     //
     protected $table="Tasks";
@@ -13,4 +15,9 @@ class Tasks extends Model
         'NoOfStudents',
         'Difficulty',
     ];
+
+    public function Saving_Tasks(Request $data){
+        $this::create($data->all());
+        return true;
+    }
 }
