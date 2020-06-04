@@ -13,11 +13,13 @@ class Task extends Model
     protected $fillable=[
         'sTasks',
         'NoOfStudents',
+        'Center',
         'Difficulty',
     ];
 
-    public function Saving_Tasks(Request $data){
-        $this::create($data->all());
-        return true;
+    public function Saving_Tasks(Request $request){
+        $tasks = new Task();
+        $tasks::create($request->all());
+        return ["status"=>"success"];
     }
 }

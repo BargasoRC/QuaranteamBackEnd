@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/retrieve_bus','Name@retrieveNames');
+Route::get('/retrieve_names','NameController@retrieveNames');
 
-Route::post('Admin/AddTasks','Tasks@AddTasks');
+Route::post('/admin/addtasks','TasksController@AddTasks');
