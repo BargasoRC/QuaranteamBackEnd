@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Names;
 use DB;
 
-class Name extends Controller
+class NameController extends Controller
 {
     public function retrieveNames(){
         //Fetch all the Names of the students
