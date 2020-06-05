@@ -18,8 +18,11 @@ class Task extends Model
     ];
 
     public function Saving_Tasks(Request $request){
-        $tasks = new Task();
         $tasks::create($request->all());
         return ["status"=>"success"];
+    }
+
+    public function getAllTasks(){
+        return DB::table('Tasks')->select('sTasks','NoOfStudents','Center','Difficulty')->get();
     }
 }
