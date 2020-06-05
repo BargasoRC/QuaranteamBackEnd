@@ -25,4 +25,10 @@ class Task extends Model
     public function getAllTasks(){
         return DB::table('Tasks')->select('sTasks','NoOfStudents','Center','Difficulty')->get();
     }
+
+    public function relation_task(){
+        return $this->hasMany('App\Models\WeeklyTasks', 'sTasks');
+    }
+
+
 }

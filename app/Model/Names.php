@@ -5,6 +5,7 @@ namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 use App\Model\Accounts;
+use App\Model\WeeklyTasks;
 
 class Names extends Model
 {
@@ -23,7 +24,11 @@ class Names extends Model
     }
 
     public function relation_account(){
-        return $this->belongsTo('Accounts');
+        return $this->belongsTo('Accounts', 'NameID', 'id');
+    }
+
+    public function relation_task(){
+        return $this->hasMany('WeeklyTasks', 'id', 'NameID');
     }
 
     public function fetch_batch(){

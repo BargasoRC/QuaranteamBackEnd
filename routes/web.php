@@ -27,5 +27,6 @@ Route::get('/getAllTaskings','TasksController@getAllTaskings');
 
 Route::get('/getAllBatchNames', 'TasksController@getAllNames');
 
-Route::get('/generateTasks', 'TasksController@generateTasks');
+Route::get('/autoGenerateTasks', 'TasksController@AutogenerateTasks');
 Route::get('/returnCenter', 'TasksController@fetchCenter');
+Route::get('/getAllWeeklyTask','TasksController@getAllWeeklyTask');

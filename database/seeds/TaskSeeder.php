@@ -20,6 +20,8 @@ class TaskSeeder extends Seeder
             array("Courtyard", 5, "C2", "LIGHT"),
             array("Back Garden", 6, "C2", "LIGHT"),
             array("Hallway and Corridor", 6, "C2", "LIGHT"),
+            array("Office", 7, "C2", "LIGHT"),
+            array("Block", 7, "C2", "HARD"),
         );
 
         $length = count($tasks);

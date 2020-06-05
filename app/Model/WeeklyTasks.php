@@ -3,6 +3,10 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Model\Tasks;
+use App\Model\Names;
+use App\Model\Accounts;
+
 
 class WeeklyTasks extends Model
 {
@@ -15,20 +19,21 @@ class WeeklyTasks extends Model
         'Date'
     ];
 
-    public function relation_task(){
-        return $this->hasMany('App\Models\Tasks', 'TaskID');
+    public function task_relation(){
+        return $this->belongsTo('Tasks', 'sTasks', 'TasksID');
     }
 
     public function relation_names(){
-        return $this->hasMany('App\Models\Names', 'NameID');
+        return $this->belongsTo('Names', 'id', 'NameID');
     }
 
     public function relation_maker(){
-        return $this->hasOne('App\Models\Accounts', 'MakerID');
+        return $this->belongsTo('Accounts', 'id' , 'MakerID');
     }
 
-    public function relation_coordinator(){
-        return $this->hasOne('App\Models\Names', 'Coordinator');
+    public function fetch_taskings(){
+        $weekTaskList = WeeklyTasks::where('MakerID', 73)->get();
+        return $weekTaskList;
     }
 
 }

@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Model\WeeklyTasks;
 
 class Accounts extends Model
 {
@@ -23,5 +24,9 @@ class Accounts extends Model
 
     public function relation_gender(){
         return $this->hasOne('App\Model\Gender', 'id', 'Gender');
+    }
+
+    public function relationto_task(){
+        return $this->hasMany('WeeklyTasks', 'id', 'NameID');
     }
 }
