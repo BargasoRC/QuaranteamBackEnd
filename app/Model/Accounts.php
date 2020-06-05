@@ -13,6 +13,15 @@ class Accounts extends Model
         'Team',
         'Email',
         'Batch',
-        'Password'
+        'Password',
+        'Gender',
     ];
+
+    public function relation_name(){
+        return $this->hasOne('App\Model\Names', 'id', 'NameID');
+    }
+
+    public function relation_gender(){
+        return $this->hasOne('App\Model\Gender', 'id', 'Gender');
+    }
 }

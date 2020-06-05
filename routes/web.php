@@ -18,3 +18,14 @@ Route::get('/', function () {
 Route::get('/retrieve_names','NameController@retrieveNames');
 
 Route::post('/admin/addtasks','TasksController@AddTasks');
+
+Route::get('/getAllTaskings','TasksController@getAllTaskings');
+
+
+
+//Trying
+
+Route::get('/getAllBatchNames', 'TasksController@getAllNames');
+
+Route::get('/generateTasks', 'TasksController@generateTasks');
+Route::get('/returnCenter', 'TasksController@fetchCenter');

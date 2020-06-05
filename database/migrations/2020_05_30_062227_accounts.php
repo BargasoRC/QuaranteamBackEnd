@@ -21,6 +21,7 @@ class Accounts extends Migration
             $table->string('Email')->nullable(false);
             $table->string('Batch')->nullable();
             $table->string('Password')->nullable(false);
+            $table->integer('Gender')->nullable(false);
             $table->timestamps();
         });
     }
